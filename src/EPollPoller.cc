@@ -59,7 +59,7 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList *activeChannels)
     return now;
 }
 
-// channel update remove => EventLoop updateChannel removeChannel => Poller updateChannel removeChannel
+//channel update remove => EventLoop updateChannel removeChannel => Poller updateChannel removeChannel
 void EPollPoller::updateChannel(Channel *channel)
 {
     const int index = channel->index();
