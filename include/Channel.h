@@ -26,7 +26,8 @@ public:
 
     // 设置回调函数对象
     void setReadCallback(ReadEventCallback cb) { readCallback_ = std::move(cb); }
-    void setWriteCallback(EventCallback cb) { writeCallback_ = std::move(cb); }
+    void setWriteCallback(EventCallback cb) { writeCallback_ = std::move(cb); }//前面的小括号是接受一个叫EventCallback的函数
+    // (也就是std::function<void()>)这个参数在setWriteCallback里叫cb,后面大括号中的writeCallback_是调用这个回调函数时的函数名
     void setCloseCallback(EventCallback cb) { closeCallback_ = std::move(cb); }
     void setErrorCallback(EventCallback cb) { errorCallback_ = std::move(cb); }
 
